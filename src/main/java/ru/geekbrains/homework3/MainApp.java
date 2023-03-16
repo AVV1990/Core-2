@@ -1,5 +1,6 @@
 package ru.geekbrains.homework3;
 
+import javax.sound.midi.Soundbank;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -27,7 +28,7 @@ public class MainApp{
         }
         System.out.println(uniqueList.toString());
 
-        HashMap<String, Integer> amountWords = new HashMap<>();
+        HashMap <String, Integer> amountWords = new HashMap<>();
 
 
         for (String word : words) {
@@ -43,5 +44,28 @@ public class MainApp{
             }
         }
         System.out.println(amountWords);
+
+        System.out.println();
+
+        TelephoneDirectory telephoneDirectory = new TelephoneDirectory();
+
+
+        Abonent abonent = new Abonent("Петр","Иванов","89167377754");
+        Abonent abonent1 = new Abonent("Иван","Иванов","89167567754");
+
+
+
+
+        telephoneDirectory.add(abonent);
+        telephoneDirectory.add(abonent1);
+
+        System.out.println(telephoneDirectory.get("Иванов"));
+
+
+        System.out.println(telephoneDirectory.getAllAbonents());
+
     }
+
+
+
 }
